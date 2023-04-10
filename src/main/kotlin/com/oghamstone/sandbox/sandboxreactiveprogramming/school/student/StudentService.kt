@@ -24,4 +24,8 @@ class StudentService(var template: ReactiveMongoTemplate) {
             template.save(student).subscribe()
         }
     }
+
+    fun get(id: String): Mono<Student> {
+        return template.findById(id, Student::class.java)
+    }
 }

@@ -8,10 +8,10 @@ import reactor.core.publisher.Mono
 
 @RestController
 @RequestMapping("/student")
-class StudentController {
+class StudentController(var studentService: StudentService) {
 
-//    @GetMapping("/{id}")
-//    fun get(@PathVariable id: String): Mono<Student> {
-//        return  ResponseEntity(blogPostService.findByUrl(url), HttpStatus.OK)
-//    }
+    @GetMapping("/{id}")
+    fun get(@PathVariable id: String): Mono<Student> {
+        return studentService.get(id)
+    }
 }
