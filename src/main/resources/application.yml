@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: "ReactiveProgramming"
+    data:
+        mongodb:
+            uri: 'mongodb://user:password@localhost:27017'
+            authentication-database: admin
+            database: 'ReactiveProgrammingTest'

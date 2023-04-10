@@ -17,6 +17,7 @@ repositories {
 }
 
 dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -24,6 +25,7 @@ dependencies {
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+	implementation("com.google.code.gson:gson:2.10.1")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
 	testImplementation("org.springframework.graphql:spring-graphql-test")
