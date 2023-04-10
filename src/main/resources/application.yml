@@ -2,10 +2,14 @@ logging:
     level.org.springframework: INFO
 
 spring:
+    mvc:
+        async:
+            request-timeout: 20000
     application:
         name: "ReactiveProgramming"
     data:
         mongodb:
+            host: 'mongodb'
             uri: 'mongodb://user:password@localhost:27017'
             authentication-database: admin
             database: 'ReactiveProgrammingTest'
