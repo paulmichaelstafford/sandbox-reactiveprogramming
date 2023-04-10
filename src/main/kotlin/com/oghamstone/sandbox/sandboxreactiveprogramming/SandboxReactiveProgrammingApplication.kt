@@ -2,10 +2,12 @@ package com.oghamstone.sandbox.sandboxreactiveprogramming
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories
 
 @SpringBootApplication
-class SandboxReactiveprogrammingApplication
+@EnableReactiveMongoRepositories
+class SandboxReactiveProgrammingApplication
 
 fun main(args: Array<String>) {
-	runApplication<SandboxReactiveprogrammingApplication>(*args)
+	runApplication<SandboxReactiveProgrammingApplication>(*args)
 }
