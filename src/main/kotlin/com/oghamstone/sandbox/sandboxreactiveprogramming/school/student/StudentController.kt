@@ -20,4 +20,14 @@ class StudentController(var studentService: StudentService) {
     fun getAll(): Flux<Student> {
         return studentService.getAll()
     }
+
+    @GetMapping("/getNonReactive/{id}")
+    fun getNonReactive(@PathVariable id: String): Student {
+        return studentService.getNonReactive(id)
+    }
+
+    @GetMapping("/getAllNonReactive")
+    fun getAllNonReactive(): List<Student> {
+        return studentService.getAllNonReactive()
+    }
 }
