@@ -21,11 +21,7 @@ class StudentService(var template: ReactiveMongoTemplate) {
         for (i in 0..5) {
             var student = Student()
             student.name = "Name $i"
-            var studentMono = template.save(Mono.just(student))
-            println(studentMono)
-//            mongoTemplate.getCollection(COLLECTION).insertOne(Document.parse(GSON.toJson(student)))
-//            mongoTemplate.getCollection(COLLECTION).(Document.parse(GSON.toJson(student)))
+            template.save(student).subscribe()
         }
     }
-
 }
