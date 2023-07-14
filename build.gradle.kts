@@ -40,5 +40,19 @@ tasks.withType<Test> {
 	useJUnitPlatform()
 }
 
+abstract class PrintVersion : DefaultTask() {
+
+	@Input
+	var versionToPrint: Any = ""
+
+	@TaskAction
+	fun greet() {
+		println(versionToPrint)
+	}
+}
+// Create a task using the task type
+tasks.register<PrintVersion>("printVersion") {
+	versionToPrint = version
+}
 
 
