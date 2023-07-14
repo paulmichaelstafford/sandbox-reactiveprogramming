@@ -8,7 +8,7 @@ import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @Service
-class StudentService(var reactiveMongoTemplate: ReactiveMongoTemplate, var mongoTemplate: MongoTemplate) {
+class StudentService(var reactiveMongoTemplate: ReactiveMongoTemplate) {
 
 
     @PostConstruct
@@ -22,27 +22,11 @@ class StudentService(var reactiveMongoTemplate: ReactiveMongoTemplate, var mongo
         println("finished generating data")
     }
 
-
-    fun test() {
-        var boom: Flux<Student> = reactiveMongoTemplate.findAll(Student::class.java)
-        var asd  = boom.collectList().block()
-        var dss = get("6434026f90c24d0559d289b0").block()!!
-        val asdad = "asd"
-    }
-
     fun get(id: String): Mono<Student> {
         return reactiveMongoTemplate.findById(id, Student::class.java)
     }
 
     fun getAll(): Flux<Student> {
         return reactiveMongoTemplate.findAll(Student::class.java)
-    }
-
-    fun getNonReactive(id: String): Student {
-        return mongoTemplate.findById(id, Student::class.java)!!
-    }
-
-    fun getAllNonReactive(): List<Student> {
-        return mongoTemplate.findAll(Student::class.java)
     }
 }
