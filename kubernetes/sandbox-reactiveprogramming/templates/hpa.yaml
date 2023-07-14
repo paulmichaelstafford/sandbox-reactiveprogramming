@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "bff.fullname" . }}
+  name: {{ include "sandbox-reactiveprogramming.fullname" . }}
   labels:
-    {{- include "bff.labels" . | nindent 4 }}
+    {{- include "sandbox-reactiveprogramming.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "bff.fullname" . }}
+    name: {{ include "sandbox-reactiveprogramming.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

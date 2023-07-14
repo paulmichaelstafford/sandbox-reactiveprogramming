@@ -1,1 +1,1 @@
-rootProject.name = "sandbox-reactiveprogramming"
+rootProject.name = "reactiveprogramming"
