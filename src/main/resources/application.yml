@@ -1,3 +1,6 @@
+server:
+    port: 8080
+
 logging:
     level.org.springframework: INFO
 
@@ -13,3 +16,10 @@ spring:
             uri: 'mongodb://user:password@localhost:27017'
             authentication-database: admin
             database: 'ReactiveProgrammingTest'
+
+management:
+    endpoints:
+        web:
+            base-path: /actuator
+            exposure:
+                include: info, health, metrics
