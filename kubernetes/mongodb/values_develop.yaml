@@ -1,0 +1,3 @@
+auth:
+        rootUser: "devs"
+        rootPassword: "password"

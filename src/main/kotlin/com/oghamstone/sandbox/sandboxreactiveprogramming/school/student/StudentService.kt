@@ -11,16 +11,16 @@ import reactor.core.publisher.Mono
 class StudentService(var reactiveMongoTemplate: ReactiveMongoTemplate) {
 
 
-    @PostConstruct
-    fun generateData() {
-        for (i in 0..5000) {
-            var student = Student()
-            student.name = "Name $i"
-            reactiveMongoTemplate.save(student).subscribe()
-            println(i)
-        }
-        println("finished generating data")
-    }
+//    @PostConstruct
+//    fun generateData() {
+//        for (i in 0..5000) {
+//            var student = Student()
+//            student.name = "Name $i"
+//            reactiveMongoTemplate.save(student).subscribe()
+//            println(i)
+//        }
+//        println("finished generating data")
+//    }
 
     fun get(id: String): Mono<Student> {
         return reactiveMongoTemplate.findById(id, Student::class.java)
