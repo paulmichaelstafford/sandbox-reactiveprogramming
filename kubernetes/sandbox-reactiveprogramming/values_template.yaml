@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: localhost:30332/com/oghamstone/sandbox/sandboxreactiveprogramming
+  repository: localhost:32000/com/oghamstone/sandbox/sandbox-reactiveprogramming
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "UPDATE_WITH_POM_VERSION"
