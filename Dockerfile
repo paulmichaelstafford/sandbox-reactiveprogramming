@@ -8,8 +8,16 @@
 
 
 
+#FROM openjdk:17-alpine
+#VOLUME /tmp
+#ARG JAR_FILE=build/libs/*.jar
+#COPY ${JAR_FILE} app.jar
+#ENTRYPOINT ["java","-cp","app:app/lib/*","com.oghamstone.sandbox.sandboxreactiveprogramming.SandboxReactiveProgrammingApplication"]
+
+
+
 FROM openjdk:17-alpine
 VOLUME /tmp
-ARG JAR_FILE=build/libs/*.jar
+ARG JAR_FILE
 COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar /app.jar ${0} ${@}"]
+ENTRYPOINT ["java","-jar","/app.jar"]
