@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "sandbox-reactiveprogramming.fullname" . }}
+  name: {{ include "sandboxreactiveprogramming.fullname" . }}
   labels:
-    {{- include "sandbox-reactiveprogramming.labels" . | nindent 4 }}
+    {{- include "sandboxreactiveprogramming.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -13,4 +13,4 @@ spec:
       name: http
       nodePort:  {{ .Values.service.nodePort }}
   selector:
-    {{- include "sandbox-reactiveprogramming.selectorLabels" . | nindent 4 }}
+    {{- include "sandboxreactiveprogramming.selectorLabels" . | nindent 4 }}

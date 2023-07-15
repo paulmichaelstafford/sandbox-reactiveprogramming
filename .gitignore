@@ -37,4 +37,4 @@ out/
 .vscode/
 
 
-kubernetes/sandbox-reactiveprogramming/values.yaml
+kubernetes/sandboxreactiveprogramming/values.yaml

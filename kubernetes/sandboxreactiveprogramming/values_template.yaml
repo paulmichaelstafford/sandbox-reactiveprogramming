@@ -1,11 +1,11 @@
-# Default values for sandbox-reactiveprogramming.
+# Default values for sandboxreactiveprogramming.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: localhost:32000/com/oghamstone/sandbox/sandbox-reactiveprogramming
+  repository: localhost:32000/com/oghamstone/sandbox/sandboxreactiveprogramming
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "UPDATE_WITH_POM_VERSION"

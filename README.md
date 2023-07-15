@@ -13,8 +13,8 @@ Commands to run:
 
 docker-compose up -d
 gradle build
-docker build --build-arg JAR_FILE=build/libs/*.jar -t sandboxreactiveprogramming/sandbox-reactiveprogramming .
-docker run -p 8080:8080 sandboxreactiveprogramming/sandbox-reactiveprogramming
+docker build --build-arg JAR_FILE=build/libs/*.jar -t sandboxreactiveprogramming/sandboxreactiveprogramming .
+docker run -p 8080:8080 sandboxreactiveprogramming/sandboxreactiveprogramming
 
 
 Run performance test:
