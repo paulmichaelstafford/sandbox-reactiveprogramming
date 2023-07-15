@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "com.oghamstone.sandbox"
-version = "0.0.12-SNAPSHOT"
+version = "0.0.14-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
