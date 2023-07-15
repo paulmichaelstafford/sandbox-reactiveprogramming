@@ -20,3 +20,12 @@ docker run -p 8080:8080 sandboxreactiveprogramming/sandboxreactiveprogramming
 Run performance test:
 
 Load jemeterLoadTEx.jmx into jmeter and run
+
+
+
+mongo -udevs -ppassword --port 46453 --authenticationDatabase admin
+show dbs
+use cache_master_db
+show collection
+db.collectionName.find()
+db.dropDatabase()
