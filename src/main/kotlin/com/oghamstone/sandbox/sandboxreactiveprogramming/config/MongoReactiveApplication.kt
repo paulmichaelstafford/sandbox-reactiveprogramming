@@ -10,25 +10,26 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.data.mongodb.config.AbstractReactiveMongoConfiguration
 
 
-@Configuration
-class MongoReactiveApplication: AbstractReactiveMongoConfiguration() {
-
-    @Value(value = "\${spring.data.mongodb.database}")
-    private val database: String = ""
-
-    @Value("\${spring.data.mongodb.uri}")
-    private var mongoUri: String? = null
-
-    @Bean
-    fun mongoClient(): MongoClient {
-        return MongoClients.create()
-    }
-
-    override fun getDatabaseName(): String {
-        return database
-    }
-    override fun configureClientSettings(builder: MongoClientSettings.Builder) {
-        builder.applyConnectionString(ConnectionString(mongoUri!!))
-    }
-
-}
+//@Configuration
+//class MongoReactiveApplication: AbstractReactiveMongoConfiguration() {
+//
+//    @Value(value = "\${spring.data.mongodb.database}")
+//    private val database: String = ""
+//
+//    @Value("\${spring.data.mongodb.uri}")
+//    private var mongoUri: String? = null
+//
+//    @Bean
+//    fun mongoClient(): MongoClient {
+//        return MongoClients.create()
+//    }
+//
+//    override fun getDatabaseName(): String {
+//        return database
+//    }
+//    override fun configureClientSettings(builder: MongoClientSettings.Builder) {
+//        builder.apply
+//        builder.applyConnectionString(ConnectionString(mongoUri!!))
+//    }
+//
+//}

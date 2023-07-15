@@ -1,5 +1,0 @@
-spring:
-    data:
-        mongodb:
-            host: 'mongodb'
-            uri: 'mongodb://user:password@mongodb:27017'

@@ -12,8 +12,12 @@ spring:
         name: "ReactiveProgramming"
     data:
         mongodb:
+            username: 'devs'
+            password: 'password'
             host: 'mongodb'
-            uri: 'mongodb://user:password@localhost:27017'
+            port: 27017
+#            host: 'localhost'  mkctl port-forward mongodb-5f65f5c48f-w7cvl :27017
+#            port: 37103
             authentication-database: admin
             database: 'ReactiveProgrammingTest'
 

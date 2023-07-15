@@ -11,6 +11,11 @@ import reactor.core.publisher.Mono
 @RequestMapping("/student")
 class StudentController(var studentService: StudentService) {
 
+    @GetMapping("/generateData")
+    fun generateData() {
+        studentService.generateData()
+    }
+
     @GetMapping("/{id}")
     fun get(@PathVariable id: String): Mono<Student> {
         return studentService.get(id)
