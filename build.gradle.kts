@@ -40,7 +40,6 @@ tasks.withType<Test> {
 }
 
 abstract class PrintVersion : DefaultTask() {
-
 	@Input
 	var versionToPrint: Any = ""
 
@@ -49,7 +48,6 @@ abstract class PrintVersion : DefaultTask() {
 		println(versionToPrint)
 	}
 }
-// Create a task using the task type
 tasks.register<PrintVersion>("printVersion") {
 	versionToPrint = version
 }
