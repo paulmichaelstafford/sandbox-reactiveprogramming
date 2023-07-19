@@ -12,7 +12,13 @@ spring:
         name: "ReactiveProgramming"
     data:
         mongodb:
-            uri: 'mongodb://devs:password@localhost:27017'
+            uri: 'mongodb://devs:password@mongodb:27017'
+            username: 'devs'
+            password: 'password'
+            host: 'mongodb'
+            port: 27017
+#            host: 'localhost'  mkctl port-forward mongodb-5f65f5c48f-w7cvl :27017
+#            port: 37103
             authentication-database: admin
             database: 'ReactiveProgrammingTest'
 
@@ -30,4 +36,4 @@ management:
         web:
             base-path: /actuator
             exposure:
-                include: info, health, metrics
+                include: info, health, metrics, prometheus

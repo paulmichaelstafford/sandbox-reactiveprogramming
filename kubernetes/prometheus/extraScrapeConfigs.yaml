@@ -1,0 +1,10 @@
+- job_name: 'important'
+  scrape_interval: 5s
+  metrics_path: /actuator/prometheus
+  static_configs:
+     -   targets: [ 'sandboxreactiveprogramming:8080' ]
+         labels:
+             group: 'sandboxreactiveprogramming'
+     -   targets: [ 'sandboxnonreactiveprogramming:8081' ]
+         labels:
+           group: 'sandboxnonreactiveprogramming'

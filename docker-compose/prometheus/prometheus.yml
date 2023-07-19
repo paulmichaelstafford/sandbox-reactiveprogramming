@@ -1,0 +1,17 @@
+scrape_configs:
+    - job_name: ' HA Cloud Session Server with TLS'
+      scrape_interval: 5s
+      scheme: http
+      tls_config:
+          insecure_skip_verify: true
+      metrics_path: actuator/prometheus
+      static_configs:
+          -   targets: [ '172.17.0.1:8080' ]
+              labels:
+                  group: 'reactive'
+          -   targets: [ '172.17.0.1:8081' ]
+              labels:
+                group: 'nonreactive'
+      basic_auth:
+          username: 'devs@ogham-stone.com'
+          password: 'password'

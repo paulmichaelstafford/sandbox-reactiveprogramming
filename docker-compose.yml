@@ -13,8 +13,31 @@ services:
             - MONGO_INITDB_ROOT_USERNAME=user
             - MONGO_INITDB_ROOT_PASSWORD=password
         restart: always
+    prometheus:
+        container_name: prometheus
+        restart: always
+        networks:
+            - sandbox-net
+        image: prom/prometheus:v2.34.0
+        ports:
+            - '9090:9090'
+        volumes:
+            - ./docker-compose/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+            - prometheus-data:/prometheus
+    grafana:
+        restart: always
+        networks:
+            - sandbox-net
+        image: grafana/grafana-oss:8.4.6
+        ports:
+            - '3000:3000'
+        volumes:
+            - .docker-compose/grafana/datasources/:/etc/grafana/provisioning/datasources/
+        user: "grafana:root"
+
 networks:
     sandbox-net:
 
 volumes:
     mongodb_data:
+    prometheus-data:

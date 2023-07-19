@@ -1,0 +1,21 @@
+service:
+    enabled: true
+    type: NodePort
+    port: 80
+    targetPort: 3000
+    nodePort: 31002
+
+adminUser: admin
+adminPassword: password
+
+datasources:
+    datasources.yaml:
+        apiVersion: 1
+        datasources:
+            - name: prometheus
+              type: prometheus
+              access: proxy
+              url: http://prometheus-server:80
+              jsonData:
+                  timeInterval: "5s"
+              isDefault: true
